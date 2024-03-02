@@ -1,12 +1,4 @@
-const DarkThemeToggleElement = document.querySelector('.DarkThemeToggle');
-const AppElement = document.querySelector('.App');
+import ToggleDarkTheme from './scripts/ToggleDarkTheme';
+import { DarkThemeToggleElement } from './scripts/elements';
 
-const ToggleDarkTheme = () => {
-  console.log('hi hooooda , you will turn the theme');
-  AppElement.classList.toggle('App--isDark');
-};
-
-DarkThemeToggleElement.addEventListener('click', (event) => {
-  event.preventDefault();
-  ToggleDarkTheme();
-});
+DarkThemeToggleElement.addEventListener('click', ToggleDarkTheme);
