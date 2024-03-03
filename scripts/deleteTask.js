@@ -2,8 +2,7 @@ import fetchData from './fetchData';
 import initTaskList from './initTaskList';
 import saveToDatabase from './saveToDatabase';
 
-const deleteTask = (event, index) => {
-  debugger;
+const deleteATask = (event, index) => {
   const answer = confirm('هل أنت متأكد من حذف هذه المهمة؟');
   if (!answer) return;
 
@@ -13,4 +12,4 @@ const deleteTask = (event, index) => {
   initTaskList(tasks);
 };
 
-export default deleteTask;
+export default deleteATask;
