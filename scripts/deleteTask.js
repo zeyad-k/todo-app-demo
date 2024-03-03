@@ -3,6 +3,7 @@ import initTaskList from './initTaskList';
 import saveToDatabase from './saveToDatabase';
 
 const deleteTask = (event, index) => {
+  debugger;
   const answer = confirm('هل أنت متأكد من حذف هذه المهمة؟');
   if (!answer) return;
 
