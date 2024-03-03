@@ -1,9 +1,10 @@
 import ToggleDarkTheme from './ToggleDarkTheme';
 import fetchData from './fetchData';
-import renderTask from './renderTasks';
+import initTaskList from './initTaskList';
+// import initTaskListeners from './initTaskListeners';
 
 const initDataOnStartup = () => {
   if (fetchData('darkThemeFlag')) ToggleDarkTheme();
-  if (fetchData('tasks')) renderTask();
+  initTaskList(fetchData('tasks'));
 };
 export default initDataOnStartup;

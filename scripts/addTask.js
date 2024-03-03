@@ -1,14 +1,17 @@
 import { taskInputElement } from './elements';
 import fetchData from './fetchData';
-import renderTask from './renderTasks';
+import initTaskList from './initTaskList';
 import saveToDatabase from './saveToDatabase';
 
 const addTask = () => {
 //   const taskList = [];
   const taskValue = taskInputElement.value;
   if (!taskValue || taskValue.trim() === '') return;
+  const task = {
+    value: taskValue,
+    isCompleted: false,
+  };
   const taskList = fetchData('tasks') || [];
-  //   taskList.forEach((task) => {
   //     taskListElement.innerHTML += `<li class="TaskList__taskContent" >
   // <div class="TaskList__checkbox" tabindex='0' role='button' >
   // <img class="TaskList__checkboxImg" scr="./assets/icon-checkmark.svg" >
@@ -20,9 +23,10 @@ const addTask = () => {
   // </li>`;
   //   });
 
-  taskList.push(taskValue);
+  taskList.push(task);
   saveToDatabase('tasks', taskList);
-  renderTask();
+  taskInputElement.value = '';
+  initTaskList(taskList);
 };
 
 export default addTask;
