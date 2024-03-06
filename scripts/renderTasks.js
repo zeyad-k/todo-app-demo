@@ -8,7 +8,7 @@ const renderTask = () => {
   taskListElement.innerHTML = '';
 
   taskList.forEach((task) => {
-    taskListElement.innerHTML += `<li class="TaskList__taskContent${task.isCompleted ? ' TaskList__taskContent--isActive' : ''}">
+    taskListElement.innerHTML += `<li draggable="true" class="TaskList__taskContent ${task.isCompleted ? ' TaskList__taskContent--isActive' : ''}">
     <div class='TaskList__checkbox' tabindex="0" role="button">
       <img class='TaskList__checkboxImg' src="./assets/icon-checkmark.svg" alt="checkmark" />
     </div>

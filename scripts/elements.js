@@ -7,3 +7,4 @@ export const TaskListLink = document.querySelector('.TaskList__link');
 
 export const getTaskListDeleteElements = () => document.querySelectorAll('.TaskList__deleteIcon');
 export const getTaskListCheckboxElements = () => document.querySelectorAll('.TaskList__checkbox');
+export const getTasksElements = () => document.querySelectorAll('.TaskList__taskContent');

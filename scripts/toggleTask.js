@@ -3,13 +3,6 @@ import fetchData from './fetchData';
 import initTaskList from './initTaskList';
 import saveToDatabase from './saveToDatabase';
 
-// const dropTaskDown = (tasks, index) => {
-//   if (tasks[index].isCompleted) {
-//     const completedTask = tasks.splice(index, 1)[0];
-//     tasks.push(completedTask);
-//   }
-// };
-
 const toggleATask = (event, index) => {
   const tasks = fetchData('tasks');
 
