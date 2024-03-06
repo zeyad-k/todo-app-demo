@@ -30,9 +30,3 @@ const initSortableList = (e) => {
 
 taskListElement.addEventListener('dragover', initSortableList);
 taskListElement.addEventListener('dragenter', (e) => e.preventDefault());
-
-// getTasksElements().forEach((task) => {
-//   task.addEventListener('dragstart', () => {
-//     task.classList.add('dragging');
-//   });
-// });
