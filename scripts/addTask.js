@@ -13,7 +13,8 @@ const addTask = () => {
   };
   const taskList = fetchData('tasks') || [];
 
-  taskList.push(task);
+  taskList.unshift(task);
+  // taskList.push(task);
   saveToDatabase('tasks', taskList);
   taskInputElement.value = '';
   initTaskList(taskList);
