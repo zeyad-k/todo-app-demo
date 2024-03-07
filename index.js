@@ -1,9 +1,9 @@
-import ToggleDarkTheme from './scripts/ToggleDarkTheme';
-import addTask from './scripts/addTask';
+import ToggleDarkTheme from './scripts/ToggleDarkTheme.js';
+import addTask from './scripts/addTask.js';
 import {
   DarkThemeToggleElement, TaskListLink, addTaskElement, taskListElement,
-} from './scripts/elements';
-import initDataOnStartup from './scripts/initDataOnStartup';
+} from './scripts/elements.js';
+import initDataOnStartup from './scripts/initDataOnStartup.js';
 
 initDataOnStartup();
 DarkThemeToggleElement.addEventListener('click', ToggleDarkTheme);
