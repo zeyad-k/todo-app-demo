@@ -343,3 +343,11 @@ code {
 //   />
 // </div>
 // </li>`;
+.TaskList__taskContent {
+  input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+  }
+}

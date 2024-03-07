@@ -18,6 +18,7 @@ TaskListLink?.addEventListener('click', () => {
   TaskListLink?.classList.toggle('TaskList__link--isActive');
 });
 
+// Drag and Drop
 const initSortableList = (e) => {
   e.preventDefault();
   const draggingItem = taskListElement.querySelector('.dragging');

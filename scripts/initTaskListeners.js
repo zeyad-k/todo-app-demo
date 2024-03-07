@@ -24,4 +24,72 @@ export const initTaskListeners = () => {
       task.classList.remove('dragging');
     });
   });
+
+  //
+  getTasksElements().forEach((task) => {
+    task.addEventListener('click', function () {
+      const taskValue = this.querySelector('.TaskList__value');
+      const currentValue = taskValue.textContent;
+
+      // Create an input field and set its initial value to the current task value
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.value = currentValue;
+
+      // When the input field loses focus, change it back to a regular task
+      input.addEventListener('blur', function () {
+        taskValue.textContent = this.value;
+        this.replaceWith(taskValue);
+      });
+
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault(); // Prevent form submission
+          taskValue.textContent = this.value;
+          this.replaceWith(taskValue);
+        }
+      });
+
+      // Replace the current task value with the input field
+      taskValue.replaceWith(input);
+
+      // Automatically focus on the input field
+      input.focus();
+    });
+  });
 }; export default initTaskListeners;
+
+//  edit on click functionality
+const tasks = document.querySelectorAll('.TaskList__taskContent');
+
+tasks.forEach((task) => {
+  task.addEventListener('click', function () {
+    const taskValue = this.querySelector('.TaskList__value');
+    const currentValue = taskValue.textContent;
+
+    // Create an input field and set its initial value to the current task value
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = currentValue;
+
+    // When the input field loses focus, change it back to a regular task
+    input.addEventListener('blur', function () {
+      taskValue.textContent = this.value;
+      this.replaceWith(taskValue);
+    });
+
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault(); // Prevent form submission
+        taskValue.textContent = this.value;
+        this.replaceWith(taskValue);
+      }
+    });
+
+    // Replace the current task value with the input field
+    taskValue.replaceWith(input);
+
+    // Automatically focus on the input field
+    input.focus();
+  });
+});
